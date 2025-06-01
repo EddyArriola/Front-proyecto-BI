@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte Power BI</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 1rem;
+      background-color: #f5f5f5;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .powerbi-container {
+      flex: 1; /* Ocupa todo el espacio restante */
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Reporte de ventas</h1>
+  <div class="powerbi-container">
+    <iframe 
+      title="Reporte de ventas" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiNzNiYTBmN2EtYWViMy00MTk3LWEzOWEtNGM3MmM5ZDQ0N2Y3IiwidCI6IjVmNTNiNGNlLTYzZDQtNGVlOC04OGQyLTIyZjBiMmQ0YjI3YSIsImMiOjR9"
+      allowfullscreen="true">
+    </iframe>
+  </div>
+</body>
+</html>

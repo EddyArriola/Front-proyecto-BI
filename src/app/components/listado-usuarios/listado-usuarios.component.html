@@ -1,0 +1,35 @@
+<app-barra-p *ngIf="loading"></app-barra-p>
+<div *ngIf="!loading" class="container">
+    
+    <div class="title">
+        <h1>Listado de usuarios</h1>
+    </div>
+    
+   <table *ngIf="listaUser.length > 0" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">email</th>
+      <th scope="col">Contraseña</th>
+      <th scope="col">Rol</th>
+      <th scope="col">Fecha de creacion</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr *ngFor="let user of listaUser" class="table-light">
+      <td>{{user.id}}</td>
+      <td>{{user.email}}</td>
+      <td>********</td>
+      <td>{{user.role | currency}}</td>
+      <td>{{user.createdAt | date:'shortDate'}}</td>
+    
+      <td>
+        <button (click)="deleteVenta(user.id!)" type="button" class="btn btn-primary btn-sm ms-2">Eliminar</button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table> 
+<h5 *ngIf="listaUser.length == 0">nada que mostrar</h5>
+</div>

@@ -1,0 +1,40 @@
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #53A08E; /* Verde oscuro base */
+  color: #fff;
+}
+
+.sidebar h4 {
+  color: #F7F0BA; /* Amarillo claro */
+}
+
+.sidebar-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  color: #F7F0BA;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar-link:hover {
+  background-color: #7EBEA3; /* Verde claro */
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar-link.active {
+  background-color: #A9CBA6; /* Verde pastel claro */
+  color: #fff;
+  font-weight: bold;
+}
+
+.cerrar-sesion-btn {
+  background-color: #E0DBA4; /* Beige mostaza */
+  color: #000;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.cerrar-sesion-btn:hover {
+  background-color: #F7F0BA; /* Amarillo claro */
+}

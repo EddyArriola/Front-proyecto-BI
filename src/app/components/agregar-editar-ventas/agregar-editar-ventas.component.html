@@ -1,0 +1,31 @@
+<app-barra-p *ngIf="loading"></app-barra-p>
+<div *ngIf="!loading" class="container">
+    <h1>Agregar venta</h1>
+</div>
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card border-success mb-3" style="max-width: 60rem;">
+            <div class="card-header text-center">{{operacion}}</div>
+            
+                <div class="card-body">
+                    <form [formGroup]="form" (ngSubmit)="addVentas()">
+                <input formControlName="producto" type="text" class="form-control mt-2" placeholder="ingrese producto">
+                <input formControlName="cantidad" type="number" class="form-control mt-2" placeholder="ingrese cantidad">
+                <input formControlName="precio" type="number" class="form-control mt-2" placeholder="ingrese precio">
+                <input formControlName="usuario" type="number" class="form-control mt-2" placeholder="ingrese el usuario">
+                <div class="row mt-2 text-center">
+                    <div class="col-lg-6">
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button routerLink="/ventas" routerLinkActive="router-link-active"  type="button" class="btn btn-secondary">Volver</button>
+                    </div> 
+                    </div>
+                     </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+

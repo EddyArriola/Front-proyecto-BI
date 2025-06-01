@@ -1,0 +1,39 @@
+<app-barra-p *ngIf="loading"></app-barra-p>
+<div *ngIf="!loading" class="container">
+    
+    <div class="title">
+        <h1>Listado de ventas</h1>
+        <button type="button" class="btn btn-success route" routerLink="/agregarVentas">Agregar Venta</button>
+    </div>
+    
+   <table *ngIf="listaVentas.length > 0" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Fecha de venta</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio U.</th>
+      <th scope="col">ID vendedor</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr *ngFor="let ventas of listaVentas" class="table-light">
+      <td>{{ventas.id}}</td>
+      <td>{{ventas.sale_date | date:'shortDate'}}</td>
+      <td>{{ventas.product_name}}</td>
+      <td>{{ventas.quantity}}</td>
+      <td>{{ventas.unit_price | currency}}</td>
+      <td>{{ventas.created_by}}</td>
+    
+      <td>
+        <button routerLink="/editar/{{ventas.id}}" type="button" class="btn btn-primary btn-sm">Editar</button>
+        <button (click)="deleteVenta(ventas.id!)" type="button" class="btn btn-primary btn-sm ms-2">Eliminar</button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table> 
+<h5 *ngIf="listaVentas.length == 0">nada que mostrar</h5>
+</div>
